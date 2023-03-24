@@ -1,0 +1,146 @@
+<template>
+  <div class="wrapper">
+  <div class="footer">
+  <div class="first-block block">
+  <div>
+  <p class="mainText">О компании</p>
+  <p>О нашей компании</p>
+  <p><a href="">Вакансии</a></p>
+  <p><a href="">Партнеры</a></p>
+  <p><a href="">Контакты</a></p>
+  </div>
+  <div>
+  <p class="mainText">Организаторам</p>
+  <p><a href="">Преимущества площадки</a></p>
+  <p><a href="">Структура комплекса</a></p>
+  <p><a href="">Онлайн-заявка на организацию</a></p>
+  <p><a href="">Документы организаторам</a></p>
+  </div>
+  </div>
+  <div class="second-block block">
+  <div><p class="mainText">Экспонентам</p>
+  <p><a href="">Общие условия участия</a></p>
+  <p><a href="">Услуги экспонентам</a></p>
+  <p><a href="">Документы экспонентам</a></p>
+  <p><a href="">Забронировать гостиницу</a></p></div>
+  <div>
+  <p class="mainText">Посетителям</p>
+  <p><a href="">Сервисы</a></p>
+  <p><a href="">Онлайн-регистрация</a></p>
+  <p><a href="">Забронировать гостиницу</a></p>
+  <p><a href="">Центр деловых контактов</a></p>
+  </div>
+  </div>
+  <div class="third-block block">
+  <div>
+  <p class="mainText">Прессе</p>
+  <p><a href="">Аккредитация</a></p>
+  <p><a href="">Пресс-служба</a></p>
+  <p><a href="">Правила аккредитации</a> </p>
+  </div>
+  <div>
+  <p class="mainText">Приложение</p>
+  <img :src="apple"/>
+  <img :src="google"/>
+  </div>
+  </div>
+  <div class="forth-block block">
+  <div>
+  <p class="mainText">Мы в соц. сетях</p>
+  <img :src="contact"/>
+  
+  </div>
+  <div>
+  <p class="mainText">Подписка на новости</p>
+  <p>Получайте все самые последние новости о мероприятиях в Экспофоруме.</p>
+  <div class="placeForInput">
+  <div><input type="text" class="inputStyle"/></div>
+  <img :src="messImg"/>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </template>
+  
+  <script>
+  export default {
+  name: "FooterComponent",
+  props:["ForFooterComponent"],
+  data(){
+  return{
+  contact: this.ForFooterComponent.allSrc.contact,
+  messImg:this.ForFooterComponent.allSrc.messageImg ,
+  apple:this.ForFooterComponent.allSrc.apple ,
+  google:this.ForFooterComponent.allSrc.google
+  }
+  }
+  
+  }
+  </script>
+  
+  <style scoped>
+  *{
+  color: white;
+  }
+  @font-face {
+  font-family: 'Plumb';
+  src: url("D:\@@@СКАЧКA@@@\Forum\forum\public\assets\Plumb.ttf");
+  }
+  @font-face {
+  font-family: 'Circe';
+  src: url("D:\@@@СКАЧКA@@@\Forum\forum\public\assets\circe.ttf");
+  }
+  .inputStyle{
+  width: 200px;
+  height: 40px;
+  }
+  .placeForInput{
+  margin-top: 20px;
+  display: flex;
+  }
+  .block{
+  width: 220px;
+  
+  }
+  .block > div{
+  margin-bottom: 30px;
+  }
+  p{
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 135%;
+  margin-bottom: 10px;
+  }
+  .mainText{
+  font-family: 'Plumb';
+  margin-bottom: 15px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 130%;
+  }
+  .wrapper{
+  display: flex;
+  align-items: center;
+  height: 500px;
+  width: 1920px;
+  background-color: LightSeaGreen;
+  }
+  .footer{
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  }
+  a{
+  text-decoration: none;
+  }
+  a:hover {
+  color: #FFC41E; /* Цвет ссылки при наведении */
+  text-decoration: underline; /* Добавляем подчёркивание */
+  }
+  </style>
