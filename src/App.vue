@@ -1,6 +1,6 @@
 <template>
- <FirstScreen></FirstScreen>
-<TwoBlock></TwoBlock>
+ <UpperBoxes ></UpperBoxes>
+
  <div id='app'>
     <BlockWithItems :BlockComponents="BlockComponents"/>
     <FooterComponent :ForFooterComponent="ForFooterComponent"/>
@@ -12,12 +12,12 @@ import TwoBlock from './components/TwoBlock.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import FirstScreen from './components/FirstScreen/FirstScreen.vue';
 import BlockWithItems from './components/BlockWithItems.vue';
+import UpperBoxes from './components/UpperBoxes.vue';
+
 export default{
   name:"App",
   components: {
-    TwoBlock,
-
-    FirstScreen,
+    UpperBoxes,
     BlockWithItems,
     FooterComponent
   },
@@ -34,13 +34,13 @@ data() {
       },
       BlockComponents: {
         allSrc:{
-          Item1:"./src/components/img/img_1.svg",
-          Item3:"./src/components/img/img_2.svg",
-          Item4:"./src/components/img/img_3.svg",
-          Item5:"./src/components/img/img_4.svg",
-          Item6:"./src/components/img/img_5.svg",
-          Item2:"./src/components/img/img.svg",
-          Arrow:"./src/components/img/arrow.svg",
+          Item1:require("../public/assets/Eventsimg/event1.svg"),
+          Item2:require("../public/assets/Eventsimg/event2.svg"),
+          Item3:require("../public/assets/Eventsimg/event3.svg"),
+          Item4:require("../public/assets/Eventsimg/event4.svg"),
+          Item5:require("../public/assets/Eventsimg/event5.svg"),
+          Item6:require("../public/assets/Eventsimg/event6.svg"),
+          Arrow:require("../public/assets/arrow.svg"),
 
 
         }

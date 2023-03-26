@@ -11,14 +11,14 @@
         </a>
         <h3 class="English">English</h3>
     <FirstScreenMenu class="menu" v-bind:MenuItems = 'MenuItems'></FirstScreenMenu>
-   
+  </div>
     <div class="form">
       <p class="text1">ЭКСПОФОРУМ </p>
       <p class="text2">конгрессно-выставочный центр <br>Санкт-Петербурга</p>
       <Block></Block>
       <p class="text3">О комплексе </p>
     </div>
-  </div>
+
 </template>
 <script>
 import FirstScreenMenu from "@/components/FirstScreen/FirstScreenMenu.vue";

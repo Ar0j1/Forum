@@ -1,10 +1,10 @@
 <template>
-  <ul>
+  <div id="upperbox">
     <FirstScreenMenuItem
         v-for="MenuItem of MenuItems" :key='MenuItem.id'
         v-bind:MenuItem = 'MenuItem'
     />
-  </ul>
+  </div>
 
 </template>
 
@@ -13,6 +13,7 @@ import FirstScreenMenuItem from './FirstScreenMenuItem.vue';
 
 export default {
   props:['MenuItems'],
+
   name: "FirstScreenMenu",
   components: {
     FirstScreenMenuItem
@@ -22,11 +23,9 @@ export default {
 
 <style scoped>
 
-  ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  #upperbox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
 
