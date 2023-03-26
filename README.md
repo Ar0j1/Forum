@@ -1,6 +1,47 @@
 # forum
 
 ## Project setup
+
+### To run the project you need to enter this in the console
+
+```
+ cd .\forum\
+```
+cd .\node_modules\
+```
+npm run serve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 npm install
 ```
