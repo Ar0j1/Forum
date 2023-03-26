@@ -3,7 +3,9 @@
 ## Project setup
 
 ### To run the project you need to enter this in the console
-
+```
+npm install
+```
 ```
  cd .\forum\
 ```
@@ -44,9 +46,7 @@ npm run serve
 
 
 
-```
-npm install
-```
+
 
 ### Compiles and hot-reloads for development
 ```
