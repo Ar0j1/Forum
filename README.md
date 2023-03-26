@@ -7,10 +7,12 @@
 ```
  cd .\forum\
 ```
+```
 cd .\node_modules\
 ```
+```
 npm run serve
-
+```
 
 
 
