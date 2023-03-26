@@ -172,10 +172,11 @@ hr {
 
 @font-face {
   font-family: 'Plumb';
-  src: url("D:\@@@СКАЧКA@@@\Forum\forum\public\assets\Plumb.ttf");
+  src: url("../../public/assets/Plumb.ttf");
 }
 @font-face {
   font-family: 'Circe';
-  src: url("D:\@@@СКАЧКA@@@\Forum\forum\public\assets\circe.ttf");
+  src: url("../../public/assets/circe.ttf");
 }
+
 </style>

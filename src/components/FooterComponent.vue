@@ -38,27 +38,28 @@
           <p><a href="">Пресс-служба</a></p>
           <p><a href="">Правила аккредитации</a> </p>
         </div>
-        <div>
+        <div id="apps">
           <p class="mainText">Приложение</p>
-          <img :src="apple"/>
+          <img :src="apple" s/>
           <img :src="google"/>
         </div>
       </div>
       <div class="forth-block block">
         <div class="contact">
           <p class="mainText">Мы в соц. сетях</p>
-          <a href=""><img :src="yt" style=" width:35px"/></a>
-          <a href=""><img :src="vk" style="width:44px"/></a>
-          <a href=""><img :src="fb" style="width:13.52px;height: 25px;"/></a>
-          <a href=""><img :src="inst" style="width:25px"/></a>
-
+          <div id="socapp">
+          <a href=""><img :src="yt" style=" width:35px;height: 35px;"/></a>
+          <a href=""><img :src="vk" style="width:35px;height: 35px;"/></a>
+          <a href=""><img :src="fb" style="width:35px;height: 35px;"/></a>
+          <a href=""><img :src="inst" style="width:35px;height: 35px;"/></a>
+          </div>
         </div>
         <div>
           <p class="mainText">Подписка на новости</p>
-          <p>Получайте все самые последние новости о мероприятиях в Экспофоруме.</p>
+          <p style="height: auto">Получайте все самые последние новости о мероприятиях в Экспофоруме.</p>
           <div class="placeForInput">
             <div><input type="text" class="inputStyle" placeholder="Введите ваш e-mail" /></div>
-            <a  href=""><img :src="messImg"/></a>
+            <a  href=""><img :src="messImg" style="height: 45px; width: 45px"/></a>
           </div>
         </div>
       </div>
@@ -87,7 +88,11 @@ export default {
 
 <style scoped>
 *{
-  color: white;
+  color: #E0E0E0;
+}
+#apps> img{
+  width: 158px;
+  height: 50px;
 }
 @font-face {
   font-family: 'Plumb';
@@ -100,7 +105,6 @@ export default {
 
 .contact>a{
 
-  margin-right: 25px;
   height: 25px;
 }
 
@@ -145,6 +149,7 @@ p{
   font-weight: 500;
   font-size: 21px;
   line-height: 130%;
+  color: white;
 }
 .wrapper{
   display: flex;
@@ -159,6 +164,11 @@ p{
   display: flex;
   justify-content: center;
   gap: 100px;
+}
+#socapp{
+  display: grid;
+  grid-template-columns: 35px 35px 35px 35px;
+  grid-column-gap: 30px;
 }
 a{
   text-decoration: none;
