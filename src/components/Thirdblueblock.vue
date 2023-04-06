@@ -1,88 +1,106 @@
 <template>
-  <div id="conteiner">
-    <div id="ourblock">
-      <p class="maintext">Организаторам</p>
-      <p><a href="">Документы организаторам</a></p>
-      <p><a href="">Услуги организаторам</a></p>
-      <p><a href="">Выставочные площади</a></p>
-      <p><a href="">Рестораны и кафе</a></p>
-      <p><a href="">Конгресс-центр</a></p>
-      <p><a href="">Спорт-центр</a></p>
+  <div  class="wroute">
+    <div class="block2">
+      <div class="second-block block">
+        <div><p class="mainText">Организаторам</p>
+          <p >Документы организаторам</p>
+          <p >Услуги организаторам</p>
+          <p >Рестораны и кафе</p>
+          <p >Конгресс-центр</p>
+          <p >Спорт-центр</p></div>
 
-    </div>
-    <div id="ourblock">
-      <p class="maintext">Экспонентам</p>
-      <p><a href="">Общие условия участия</a></p>
-      <p><a href="">Услуги экспонентам</a></p>
-      <p><a href="">Документы экспонентам</a></p>
-      <p><a href="">ентр деловых контактов</a></p>
-      <p><a href="">Забронировать гостиницу</a></p>
-      <p></p>
-    </div>
-    <div id="ourblock">
-      <p class="maintext">Посетителям</p>
-      <p><a href="">Сервисы</a></p>
-      <p><a href="">Онлайн-регистрация на мероприятие</a></p>
-      <p><a href="">Забронировать гостиницу</a></p>
-      <p><a href="">Центр деловых контактов</a></p>
-      <p></p>
-      <p></p>
-    </div>
-    <div id="ourblock">
-      <p class="maintext">Прессе</p>
-      <p><a href="">Аккредитация</a></p>
-      <p><a href="">ресс-служба</a></p>
-      <p><a href="">Правила аккредитации</a></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      </div>
+      <div class="second-block block">
+        <div><p class="mainText">Экспонентам</p>
+          <p >Общие условия участия</p>
+          <p >Услуги экспонентам</p>
+          <p >Документы экспонентам</p>
+          <p >Центр деловых контактов</p>
+          <p >Забронировать гостиницу</p></div>
+      </div>
+      <div class="third-block block">
+        <div>
+          <p class="mainText">Посетителям</p>
+          <p >Сервисы</p>
+          <p >Онлайн-регистрация <br>на мероприятие </p>
+          <p >Забронировать гостиницу</p>
+          <p >Центр деловых контактов</p>
+        </div>
+      </div>
+      <div class="forth-block block">
+        <div>
+          <p class="mainText">Прессе</p>
+          <p>Аккредитация</p>
+          <p>Пресс-служба</p>
+          <p>Правила аккредитации</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-<style>
-#conteiner{
-  width: 1920px;
-  height: 426px;
-  display: grid;
-  grid-template-columns: 210px 188px 188px 169px;
-  grid-column-gap: 120px;
-  background-color: #2378FC;
-  color: white;
-  padding-left: 400px;
-  padding-right: 400px;
-  padding-top: 75px;
-}
-#ourblock{
 
-  display: grid;
-  grid-template-columns: 1fr;
-  /*grid-template-rows: 90px 22px 22px 22px 22px 22px 22px;*/
-  grid-row-gap: 15px;
+<script>
+export default {
+  name: "TwoBlock",
+  props:["TwoBlock"],
 }
-.maintext{
+</script>
+<style scoped>
+*{
+  color: white;
+}
+.mainText{
+  margin-top: -175px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 130%;
+}
+.inputStyle{
+  width: 200px;
+  height: 40px;
+}
+.wroute{
+  display: flex;
+  align-items: center;
+  height: 391px;
+  box-sizing: border-box;
+  background: #2378FC;
+  font-family: 'Circe';
+  color: #FFFFFF;
+
+}
+.placeForInput{
+  margin-top: 20px;
+  display: flex;
+}
+.block{
+  width: 220px;
+}
+.block > div{
+  margin-bottom: 30px;
+}
+.block{
+  width: 222px;
+}
+.block > div{
+  margin-bottom: 0px;
+}
+.block2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+.mainText{
+  margin-top: -10px;
+  justify-content: space-between;
+  font-family: 'Plumb';
   font-size: 30px;
-  height: 90px;
-  font-family: Plumb;
+  padding-bottom: 30px;
+
 }
 p{
-  height: 22px;
-}
-p>a{
-  color: white;
-  text-decoration: none;
-  font-family: Circe;
-}
-a:hover{
-  color: #FFC41E;
-  text-decoration: underline;
-  text-decoration-color: #FFC41E ;
-}
-@font-face {
-  font-family: 'Plumb';
-  src: url("../../public/assets/Plumb.ttf");
-}
-@font-face {
-  font-family: 'Circe';
-  src: url("../../public/assets/circe.ttf");
+  padding-bottom: 10px;
 }
 </style>

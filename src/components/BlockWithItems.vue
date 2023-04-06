@@ -1,79 +1,132 @@
 <template>
   <div id="mainblock">
-  <div id="main">
-    <div id="text">
-      <h2 class="head">Текущие и будущие мероприятия</h2>
-      <p class="link"><a>Все мероприятия <img :src="Arrow"/></a></p>
-    </div>
-    <div id="elements">
-      <div id="el">
-        <img :src="item1"/>
-        <p class="date">2 января 2020 г. – 7 января 2020 г.</p>
-        <p id="red">ЭКСПО Ёлка</p>
-        <p>Парк интерактивных развлечений</p>
-      </div>
-      <div id="el">
-        <img :src="item2"/>
-        <p class="date">5 февраля 2020 г. – 9 февраля 2020 г.</p>
-        <p id="red">Junwex Петербург</p>
-        <p>Выставка ювелирных изделий</p>
-      </div>
-      <div id="el">
-        <img :src="item3"/>
-        <p class="date">7 февраля 2020 г. – 9 февраля 2020 г.</p>
-        <p id="red">Невский ларец</p>
-        <p>Выставка-ярмарка народных художественных
-          промыслов и ремесел</p>
-      </div>
-      <div id="el">
-        <img :src="item4"/>
-        <p class="date">14 февраля 2020 г. – 23 февраля 2020 г.</p>
-        <p id="red">Понаехали!</p>
-        <p>Специализированная арт-ярмарка</p>
-      </div>
-      <div id="el">
-        <img :src="item5"/>
-        <p class="date">18 февраля 2020 г. – 21 февраля 2020 г.</p>
-        <p id="red">VET.CAMP</p>
-        <p>Конференция для ветеринарных врачей</p>
-      </div>
-      <div id="el">
-        <img :src="item6"/>
-        <p class="date">26 февраля 2020 г. – 28 февраля 2020 г.</p>
-        <p id="red">ExpoHoReCa</p>
-        <p>Специализированная выставка</p>
-      </div>
 
+    <div id="main">
+      <div id="text">
+        <h2 class="head">Текущие и будущие мероприятия</h2>
+        <p class="link"><a>Все мероприятия <img :src="Arrow"/></a></p>
+      </div>
+      <div id="elements">
+        <div id="el">
+          <img :src="item1"/>
+          <p class="date">2 января 2020 г. – 7 января 2020 г.</p>
+          <p id="red">ЭКСПО Ёлка</p>
+          <p>Парк интерактивных развлечений</p>
+        </div>
+        <div id="el">
+          <img :src="item2"/>
+          <p class="date">5 февраля 2020 г. – 9 февраля 2020 г.</p>
+          <p id="red">Junwex Петербург</p>
+          <p>Выставка ювелирных изделий</p>
+        </div>
+        <div id="el">
+          <img :src="item3"/>
+          <p class="date">7 февраля 2020 г. – 9 февраля 2020 г.</p>
+          <p id="red">Невский ларец</p>
+          <p>Выставка-ярмарка народных художественных
+            промыслов и ремесел</p>
+        </div>
+        <div id="el">
+          <img :src="item4"/>
+          <p class="date">14 февраля 2020 г. – 23 февраля 2020 г.</p>
+          <p id="red">Понаехали!</p>
+          <p>Специализированная арт-ярмарка</p>
+        </div>
+        <div id="el">
+          <img :src="item5"/>
+          <p class="date">18 февраля 2020 г. – 21 февраля 2020 г.</p>
+          <p id="red">VET.CAMP</p>
+          <p>Конференция для ветеринарных врачей</p>
+        </div>
+        <div id="el">
+          <img :src="item6"/>
+          <p class="date">26 февраля 2020 г. – 28 февраля 2020 г.</p>
+          <p id="red">ExpoHoReCa</p>
+          <p>Специализированная выставка</p>
+        </div>
+        <ItemOfForm
+            v-for="Item of ArrayItems" :key='Item.id'
+            v-bind:ItemOfForm = 'Item'
+        >
 
+        </ItemOfForm>
+
+      </div>
+      <div id="knopka"><button id="createnewform" @click="showForm = !showForm">Add new Form</button></div>
+      <form v-if="showForm" @submit.prevent>
+        <input @input="title = $event.target.value" v-bind:value="title"  type="text" placeholder="Заголовок услуги">
+        <input @input="description = $event.target.value" v-bind:value="description" type="text" placeholder="Описание услуги">
+        <input @input="date = $event.target.value" v-bind:value="date" type="text" placeholder="Описание услуги">
+        <label>
+          <input  type="file" @input="image = $event.target.value" v-bind:value="image" >
+          <span>Выберите фото</span>
+        </label>
+        <button @click="createPost">Добавить услугу</button>
+      </form>
     </div>
-  </div>
   </div>
 </template>
 <script>
+import ItemOfForm from './ItemOfForm.vue'
+
 export default {
   name: "BlockWithItems",
-  props:["BlockComponents"],
-  data(){
-    return{
+  props: ["BlockComponents"],
+  data() {
+    return {
       item1: this.BlockComponents.allSrc.Item1,
       item2: this.BlockComponents.allSrc.Item2,
       item3: this.BlockComponents.allSrc.Item3,
       item4: this.BlockComponents.allSrc.Item4,
       item5: this.BlockComponents.allSrc.Item5,
       item6: this.BlockComponents.allSrc.Item6,
-      Arrow: this.BlockComponents.allSrc.Arrow
+      Arrow: this.BlockComponents.allSrc.Arrow,
+      ArrayItems: [],
+      title: "",
+      description: "",
+      date: "",
+      image: [],
+      showForm: false,
+    };
+  },
+  methods: {
+    createPost() {
+      console.log(this.image.split("\\").slice(-1));
+      this.image = require(`../../public/assets/${this.image.split("\\").slice(-1)}`);
+      const newPost = {
+        id: Date.now(),
+        title: this.title,
+        description: this.description,
+        image: this.image,
+        date: this.date
+      };
+      this.ArrayItems.push(newPost);
+      this.title = "";
+      this.image = [];
+      this.description = "";
+      this.date = "";
     }
-  }
-
+  },
+  components: { ItemOfForm }
 }
 </script>
 <style>
+#knopka{
+  display: grid;
+  grid-template-columns: 150px;
+  justify-content: center;
+}
+form{
+  display: grid;
+  grid-template-columns: 150px;
+  justify-content: center;
+}
 #mainblock{
   background-color: #ffc41e;
   display: flex;
   align-items: center;
-  width: 1920px;
-  height: 984px;
+  width: auto;
+  padding-bottom: 70px;
 }
 img{
   width: 350px;
@@ -165,6 +218,6 @@ a:link{
   color: black;
 }
 .link> a{
-color:black;
+  color:black;
 }
 </style>

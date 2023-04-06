@@ -1,8 +1,8 @@
 <template>
- <UpperBoxes ></UpperBoxes>
+  <UpperBoxes ></UpperBoxes>
   <Thirdblueblock></Thirdblueblock>
 
- <div id='app'>
+  <div id='app'>
     <BlockWithItems :BlockComponents="BlockComponents"/>
     <FooterComponent :ForFooterComponent="ForFooterComponent"/>
 
@@ -24,7 +24,7 @@ export default{
     BlockWithItems,
     FooterComponent
   },
-data() {
+  data() {
     return {
 
       ForFooterComponent: {
@@ -58,7 +58,7 @@ data() {
 </script>
 <style>
 *{
-  margin:0; 
+  margin:0;
 }
 
 </style>

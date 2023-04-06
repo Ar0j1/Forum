@@ -48,17 +48,18 @@
         <div class="contact">
           <p class="mainText">Мы в соц. сетях</p>
           <div id="socapp">
-          <a href=""><img :src="yt" style=" width:35px;height: 35px;"/></a>
-          <a href=""><img :src="vk" style="width:35px;height: 35px;"/></a>
-          <a href=""><img :src="fb" style="width:35px;height: 35px;"/></a>
-          <a href=""><img :src="inst" style="width:35px;height: 35px;"/></a>
+            <a href=""><img :src="yt" style=" width:35px;height: 35px;"/></a>
+            <a href=""><img :src="vk" style="width:35px;height: 35px;"/></a>
+            <a href=""><img :src="fb" style="width:35px;height: 35px;"/></a>
+            <a href=""><img :src="inst" style="width:35px;height: 35px;"/></a>
           </div>
         </div>
         <div>
           <p class="mainText">Подписка на новости</p>
           <p style="height: auto">Получайте все самые последние новости о мероприятиях в Экспофоруме.</p>
           <div class="placeForInput">
-            <div><input type="text" class="inputStyle" placeholder="Введите ваш e-mail" /></div>
+            <div><input type="email" class="inputStyle" v-model="email" @input="validateEmail" placeholder="Введите ваш e-mail" /><p v-if="emailValid" style="color: green">Email is valid</p>
+              <p v-else style="color: red">Email is invalid</p></div>
             <a  href=""><img :src="messImg" style="height: 45px; width: 45px"/></a>
           </div>
         </div>
@@ -79,8 +80,17 @@ export default {
       inst: this.ForFooterComponent.allSrc.inst,
       messImg:this.ForFooterComponent.allSrc.messageImg ,
       apple:this.ForFooterComponent.allSrc.apple ,
-      google:this.ForFooterComponent.allSrc.google
+      google:this.ForFooterComponent.allSrc.google,
+      email: "",
+      emailValid: false
+
     }
+  },
+  methods: {
+    validateEmail() {
+      const regex = /\S+@\S+\.\S+/;
+      this.emailValid = regex.test(this.email);
+    },
   }
 
 }
@@ -89,6 +99,12 @@ export default {
 <style scoped>
 *{
   color: #E0E0E0;
+}
+input +p{
+  display: none;
+}
+input:focus + p{
+  display: block;
 }
 #apps> img{
   width: 158px;
@@ -113,6 +129,7 @@ export default {
   height: 40px;
   border-width: 1;
   padding: 0 0 0 0 ;
+  color: black;
 }
 ::placeholder {
   color: #999; /* изменить цвет текста на серый */

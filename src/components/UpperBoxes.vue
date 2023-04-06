@@ -1,32 +1,32 @@
 <template>
   <div id="Moremainbox">
 
-  <div id="Mainmanu">
-    <a class="logo">
-      <img src="..\..\public\assets\logotip.png"/>
-    </a>
-    <div class="gap1">
-    <div id="Menutext">
-      <p style="width: auto">О комплексе</p>
-      <p style="width: auto">О компании</p>
-      <p style="width: auto">Новости</p>
-      <p style="width: auto">Медиа-банк</p>
-      <p style="width: auto">Контакты</p>
-    </div>
-      <div class="gap2">
-    <a class="sort">
-      <img src="..\..\public\assets\Search.png"/>
-    </a>
-        <div class="gap3">
-    <a class="globus">
-      <img src="..\..\public\assets\Globe.png"/>
-    </a>
-    <p>English</p>
+    <div id="Mainmanu">
+      <a class="logo">
+        <img src="..\..\public\assets\logotip.png"/>
+      </a>
+      <div class="gap1">
+        <div id="Menutext">
+          <p style="width: auto">О комплексе</p>
+          <p style="width: auto">О компании</p>
+          <p style="width: auto">Новости</p>
+          <p style="width: auto">Медиа-банк</p>
+          <p style="width: auto">Контакты</p>
+        </div>
+        <div class="gap2">
+          <a class="sort">
+            <img src="..\..\public\assets\Search.png"/>
+          </a>
+          <div class="gap3">
+            <a class="globus">
+              <img src="..\..\public\assets\Globe.png"/>
+            </a>
+            <p>English</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<hr>
+    <hr>
     <div id="secondbox">
 
       <div id="owntext">
@@ -45,7 +45,7 @@
           <p ><a style="color: white">Подробнее<img src="..\..\public\assets\arrow.svg"/></a></p></div>
       </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -55,14 +55,14 @@
 <style>
 #Moremainbox{
   display: grid;
-  grid-template-columns: 1920px;
+  grid-template-columns: auto;
   grid-template-rows: 90px 2px 708px;
   background-image: url("../../public/assets/bgc.png");
   height: 800px;
-  width: 1920px;
+  width: 100%;
 }
 #Mainmanu{
-display: grid;
+  display: grid;
   grid-template-columns: 175px  1fr;
   grid-column-gap:311px ;
   margin-top: 30px;
